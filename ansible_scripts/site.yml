@@ -1,0 +1,6 @@
+---
+- name: Jenkins Installation Playbook
+  hosts: all
+  roles:
+    - ansible-role-jenkins
+

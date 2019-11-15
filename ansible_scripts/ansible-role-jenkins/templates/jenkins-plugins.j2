@@ -1,0 +1,20 @@
+#!/bin/bash
+cmd="java -jar {{ jenkins_cli_path }}/jenkins-cli.jar -s {{ jenkins_cli_url }}"
+if [ "$1" == "list-outdated" ]; then
+     $cmd list-plugins | egrep '\(.*\)' | awk '{print $1}'
+    exit 0
+elif [ "$1" == "list" ]; then
+    $cmd list-plugins | awk '{print $1}'
+    exit 0
+elif [ "$1" == "install" ]; then
+    $cmd -i {{ jenkins_user_home }}/.ssh/id_rsa install-plugin $2
+    exit 0
+elif [ "$1" == "safe-restart" ]; then
+    $cmd -i {{ jenkins_user_home }}/.ssh/id_rsa safe-restart
+    exit 0
+elif [ "$1" == "safe-reload" ]; then
+    $cmd -i {{ jenkins_user_home }}/.ssh/id_rsa safe-reload
+    exit 0
+fi
+echo Usage: $0 [list-outdated|list|install|safe-restart|safe-reload]
+exit 1

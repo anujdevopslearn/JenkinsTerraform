@@ -1,0 +1,3 @@
+---
+jenkins_redhat_version: redhat
+jenkins_debian_version: debian

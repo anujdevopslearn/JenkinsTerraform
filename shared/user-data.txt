@@ -1,0 +1,6 @@
+#!/bin/bash
+
+apt-get update
+apt-get -y install python
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBJcXLzW/ZhkCgdhPYuxBodGE+tG/9V1cs3Q4IixZd5SjwWr7+BMhoI1ckGEPX5aA/f3vdqeOnW2fPHoUF6VRTP41JrozrUK+pffv60RW76tMzw+EB/PmkNoX2tw9f4l58xKl+eNjB+zULSv5iVkdYnzexzpMvNnQx8Da7dcI5Yj5WnGX30Irw3QnSM6Qk4D9Prs3f2fawgvQoNiJaO6Ty7QjIj22VUeDpGC6FS2niVCisuFFu1oJxQ73Zrt0ccpRSvdKHoPmxpjwQZkX5logJXSD60/XRi6yKvMzWjsJm/YmeoqNRDcmN/hh/rL5pxVeS0nNraNFUyLl5EdOhCRxD" >> /root/.ssh/authorized_keys
+

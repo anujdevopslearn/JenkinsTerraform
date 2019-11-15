@@ -1,0 +1,9 @@
+---
+- name: restart jenkins
+  service: name=jenkins state=restarted
+  
+- name: cli safe-restart jenkins
+  shell: /usr/local/bin/jenkins-plugins safe-restart
+
+- name: cli safe-reload jenkins
+  shell: /usr/local/bin/jenkins-plugins safe-reload
