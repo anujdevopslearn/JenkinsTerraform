@@ -3,7 +3,7 @@ resource "aws_iam_user" "users" {
   name  = var.user_names[count.index]
 }
 
-Create a file outputs.tf with below content:
+#Create a file outputs.tf with below content:
 
 output "Simon_arn" {
   value       = aws_iam_user.users[0].arn
