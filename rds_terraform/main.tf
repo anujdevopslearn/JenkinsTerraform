@@ -14,7 +14,7 @@ resource "aws_db_instance" "example" {
   engine                 = "mysql"
   db_name                = "example"
   identifier             = "example"
-  instance_class         = "db.t2.micro"
+  instance_class         = "db.t3.micro"
   allocated_storage      = 20
   publicly_accessible    = true
   username               = var.db_username
