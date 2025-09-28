@@ -70,7 +70,7 @@ resource "aws_security_group_rule" "egress_access" {
   security_group_id = "${aws_security_group.jenkins_security_group.id}"
 }
 
-data "aws_ami" "ubuntu" {
+data "aws_ami" "latest-ubuntu" {
   most_recent = true
 
   filter {
