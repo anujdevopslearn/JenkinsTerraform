@@ -17,8 +17,8 @@ resource "aws_db_instance" "example" {
   instance_class         = "db.t2.micro"
   allocated_storage      = 20
   publicly_accessible    = true
-  username               = var.db-username
-  password               = var.db-password
+  username               = var.db_username
+  password               = var.db_password
   vpc_security_group_ids = [aws_security_group.example.id]
   skip_final_snapshot    = true
 
