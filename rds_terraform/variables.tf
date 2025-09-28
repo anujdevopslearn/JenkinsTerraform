@@ -1,8 +1,8 @@
 // variables.tf
 
-variable "db-username" {
+variable "db_username" {
   type = string
 }
-variable "db-password" {
+variable "db_password" {
   type = string
 }
