@@ -70,19 +70,22 @@ resource "aws_security_group_rule" "egress_access" {
   security_group_id = "${aws_security_group.jenkins_security_group.id}"
 }
 
-data "aws_ami" "latest-ubuntu" {
-most_recent = true
+data "aws_ami" "ubuntu" {
+  most_recent = true
 
   filter {
-      name   = "name"
-      values = ["amzn2-ami-kernel-5.10-hvm-2.0.20230418.0-x86_64-gp2"]
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server*"]
   }
 
   filter {
-      name   = "virtualization-type"
-      values = ["hvm"]
+    name   = "virtualization-type"
+    values = ["hvm"]
   }
+
+  owners = ["amazon"] # Canonical
 }
+
 
 resource "aws_instance" "jenkins_instance" {
   instance_type = "t2.micro"
